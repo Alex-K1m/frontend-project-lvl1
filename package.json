@@ -8,6 +8,13 @@
   "homepage": "https://github.com/Alex-K1m/frontend-project-lvl1#readme",
   "bugs": "https://github.com/Alex-K1m/frontend-project-lvl1/issues",
   "main": "index.js",
+  "bin": {
+    "brain-games": "bin/brain-games.js"
+  },
+  "type": "module",
+  "engines": {
+    "node": ">=14"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
