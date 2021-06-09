@@ -1,3 +1,5 @@
+// @ts-check
+
 import readlineSync from 'readline-sync';
 
 const app = () => {

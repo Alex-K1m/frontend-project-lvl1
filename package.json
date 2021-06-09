@@ -9,7 +9,8 @@
   "bugs": "https://github.com/Alex-K1m/frontend-project-lvl1/issues",
   "main": "index.js",
   "bin": {
-    "brain-games": "bin/brain-games.js"
+    "brain-games": "bin/brain-games.js",
+    "brain-even": "bin/brain-even.js"
   },
   "type": "module",
   "engines": {
@@ -25,6 +26,7 @@
     "nodejs"
   ],
   "dependencies": {
+    "lodash": "^4.17.21",
     "readline-sync": "^1.4.10"
   },
   "devDependencies": {
