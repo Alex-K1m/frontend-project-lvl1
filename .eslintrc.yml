@@ -21,8 +21,4 @@ rules:
   simple-import-sort/exports: error
   sort-imports: off
   import/order: off
-
-overrides:
-  - files: src/games/*.js
-    rules:
-      class-methods-use-this: off
+  class-methods-use-this: off

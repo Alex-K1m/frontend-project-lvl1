@@ -1,26 +1,23 @@
 // @ts-check
 
-import readlineSync from 'readline-sync';
+import CLI from './CLI.js';
 
 /** @typedef { import("./typedefs").Game } Game */
 
 /** @arg {Game} game} */
-const start = (game, numberOfRounds = 3) => {
-  // const userName = greetUser();
-  console.log('Welcome to the Brain Games!');
-  const userName =
-    readlineSync.question('May I have your name? ') || 'Anonymous';
-  console.log(`Hello, ${userName}!`);
-
+const start = (game, numberOfRounds = 3, ui = new CLI()) => {
   let isGameWon = true;
 
-  console.log(game.getTask());
+  const userName =
+    ui.ask('Welcome to the Brain Games!\nMay I have your name? ') ||
+    'Anonymous';
+  ui.notify(`Hello, ${userName}!`);
+  ui.notify(game.getTask());
 
   for (let round = 1; round <= numberOfRounds; round += 1) {
     const { question, correctAnswer } = game.newRound();
 
-    console.log(`Question: ${question}`);
-    const userAnswer = readlineSync.question('Your answer: ');
+    const userAnswer = ui.ask(`Question: ${question}\nYour answer: `);
 
     const isCorrectAnswer = userAnswer === correctAnswer;
     const feedback = isCorrectAnswer
@@ -29,8 +26,7 @@ const start = (game, numberOfRounds = 3) => {
           `'${userAnswer}' is wrong answer ;(.`,
           `Correct answer was '${correctAnswer}'`,
         ].join(' ');
-
-    console.log(feedback);
+    ui.notify(feedback);
 
     if (!isCorrectAnswer) {
       isGameWon = false;
@@ -38,7 +34,7 @@ const start = (game, numberOfRounds = 3) => {
     }
   }
 
-  console.log(
+  ui.notify(
     isGameWon
       ? `Congratulations, ${userName}!`
       : `Let's try again, ${userName}!`
