@@ -1,8 +1,5 @@
 #!/usr/bin/env node
 
-import Progression from '../src/games/Progression.js';
-import start from '../src/index.js';
+import ProgressionGame from '../src/games/Progression.js';
 
-const progressionGame = new Progression();
-
-start(progressionGame);
+ProgressionGame();

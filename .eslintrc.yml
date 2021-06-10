@@ -4,7 +4,8 @@ env:
 
 extends:
   - airbnb-base
-  - plugin:prettier/recommended
+  # disabled to pass hexlet check
+  # - plugin:prettier/recommended
 
 plugins:
   - simple-import-sort

@@ -1,16 +1,15 @@
 // @ts-check
 
-import CLI from './CLI.js';
+import cli from './io/cli.js';
 
 /** @typedef { import("./typedefs").Game } Game */
 
 /** @arg {Game} game} */
-const start = (game, numberOfRounds = 3, ui = new CLI()) => {
+const start = (game, numberOfRounds = 3, ui = cli) => {
   let isGameWon = true;
 
-  const userName =
-    ui.ask('Welcome to the Brain Games!\nMay I have your name? ') ||
-    'Anonymous';
+  const userName = ui.ask('Welcome to the Brain Games!\nMay I have your name? ')
+    || 'Anonymous';
   ui.notify(`Hello, ${userName}!`);
   ui.notify(game.getTask());
 
@@ -23,9 +22,9 @@ const start = (game, numberOfRounds = 3, ui = new CLI()) => {
     const feedback = isCorrectAnswer
       ? 'Correct!'
       : [
-          `'${userAnswer}' is wrong answer ;(.`,
-          `Correct answer was '${correctAnswer}'`,
-        ].join(' ');
+        `'${userAnswer}' is wrong answer ;(.`,
+        `Correct answer was '${correctAnswer}'`,
+      ].join(' ');
     ui.notify(feedback);
 
     if (!isCorrectAnswer) {
@@ -37,7 +36,7 @@ const start = (game, numberOfRounds = 3, ui = new CLI()) => {
   ui.notify(
     isGameWon
       ? `Congratulations, ${userName}!`
-      : `Let's try again, ${userName}!`
+      : `Let's try again, ${userName}!`,
   );
 };
 

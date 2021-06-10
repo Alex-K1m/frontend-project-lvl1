@@ -21,8 +21,10 @@ export const findGcd = (num1, num2) => {
  * @arg {number} step
  * @arg {number} length
  */
-export const genProgression = (firstElement, step, length) =>
-  Array.from({ length }, (_, i) => firstElement + step * i);
+export const genProgression = (firstElement, step, length) => {
+  const progression = Array.from({ length }, (_, i) => firstElement + step * i);
+  return progression;
+};
 
 /** @arg {number} num */
 export const isPrime = (num) => {

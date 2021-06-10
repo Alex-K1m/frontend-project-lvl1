@@ -2,22 +2,27 @@
 
 import random from 'lodash/random.js';
 
+import start from '../index.js';
 import { isEven } from '../utils.js';
 
 /** @typedef { import("../typedefs").Game } Game */
 
 const task = 'Answer "yes" if the number is even, otherwise answer "no".';
+const min = 1;
+const max = 100;
 
-/** @implements {Game} */
-export default class Even {
+/** @type {Game} */
+const EvenGame = {
   getTask() {
     return task;
-  }
+  },
 
   newRound() {
-    const number = random(1, 100);
+    const number = random(min, max);
     const correctAnswer = isEven(number) ? 'yes' : 'no';
 
     return { question: String(number), correctAnswer };
-  }
-}
+  },
+};
+
+export default () => start(EvenGame);
