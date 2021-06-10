@@ -2,7 +2,7 @@
 
 import random from 'lodash/random.js';
 
-import start from '..';
+import start from '../index.js';
 
 /**
  * @typedef { import("../typedefs").Game } Game
