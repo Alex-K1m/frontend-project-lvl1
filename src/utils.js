@@ -15,3 +15,11 @@ export const findGcd = (num1, num2) => {
   }
   return num1 + num2;
 };
+
+/**
+ * @arg {number} firstElement
+ * @arg {number} step
+ * @arg {number} length
+ */
+export const genProgression = (firstElement, step, length) =>
+  Array.from({ length }, (_, i) => firstElement + step * i);
