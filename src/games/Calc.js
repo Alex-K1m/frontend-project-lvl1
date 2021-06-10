@@ -17,7 +17,7 @@ const operations = [
 ];
 
 /** @implements {Game} */
-export default class Even {
+export default class Calc {
   getTask() {
     return task;
   }
