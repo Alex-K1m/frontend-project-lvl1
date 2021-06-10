@@ -10,4 +10,7 @@ publish:
 lint:
 	@npx eslint .
 
+format:
+	@npx prettier --write "**/*.{json,yml,md}"
+
 .PHONY: test
