@@ -28,7 +28,7 @@ const start = (game, numberOfRounds = 3, ui = cli) => {
   }
 
   ui.notify(
-    `${isGameLost ? "Let's try again" : 'Congratulations'} ${userName}!`,
+    `${isGameLost ? "Let's try again" : 'Congratulations'}, ${userName}!`,
   );
 };
 
