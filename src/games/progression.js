@@ -15,7 +15,7 @@ const minLength = 5;
 const maxLength = 10;
 
 /** @type {Game} */
-const ProgressionGame = {
+const progressionGame = {
   getTask() {
     return task;
   },
@@ -34,4 +34,4 @@ const ProgressionGame = {
   },
 };
 
-export default () => start(ProgressionGame);
+export default () => start(progressionGame);

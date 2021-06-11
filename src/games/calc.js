@@ -21,7 +21,7 @@ const operations = [
 ];
 
 /** @type {Game} */
-const CalcGame = {
+const calcGame = {
   getTask() {
     return task;
   },
@@ -39,4 +39,4 @@ const CalcGame = {
   },
 };
 
-export default () => start(CalcGame);
+export default () => start(calcGame);

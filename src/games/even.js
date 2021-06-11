@@ -3,25 +3,26 @@
 import random from 'lodash/random.js';
 
 import start from '../index.js';
-import { isPrime } from '../utils.js';
+import { isEven } from '../utils.js';
 
 /** @typedef { import("../typedefs").Game } Game */
 
-const task = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+const task = 'Answer "yes" if the number is even, otherwise answer "no".';
+const min = 1;
 const max = 100;
 
 /** @type {Game} */
-const PrimeGame = {
+const evenGame = {
   getTask() {
     return task;
   },
 
   newRound() {
-    const number = random(max);
-    const correctAnswer = isPrime(number) ? 'yes' : 'no';
+    const number = random(min, max);
+    const correctAnswer = isEven(number) ? 'yes' : 'no';
 
     return { question: String(number), correctAnswer };
   },
 };
 
-export default () => start(PrimeGame);
+export default () => start(evenGame);

@@ -12,7 +12,7 @@ const min = 5;
 const max = 100;
 
 /** @type {Game} */
-const GcdGame = {
+const gcdGame = {
   getTask() {
     return task;
   },
@@ -28,4 +28,4 @@ const GcdGame = {
   },
 };
 
-export default () => start(GcdGame);
+export default () => start(gcdGame);
